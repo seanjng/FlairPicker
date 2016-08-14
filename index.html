@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>/r/PokemonGo Flair Picker</title>
+    
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+</head>
+    
+<body>
+    <div class="container">
+        <div class="row row-content">
+            <div class="col-xs-12">
+                <h2>/r/PokemonGo Flair Picker</h2>
+            </div>
+            <form class="form-horizontal col-xs-12" role="form">
+                <div class="form-group" role="form">
+                    <label for="team" class="col-xs-12 col-sm-2 control-label">Team</label>
+                    <div class="col-xs-12 col-sm-8 btn-group" data-toggle="buttons">
+                        <label class="btn btn-default" id="plain" onclick="changeTeam()">
+                            <input type="radio" name="team" autocomplete="off">No Team
+                        </label>
+                        <label class="btn btn-warning" id="instinct" onclick="changeTeam()">
+                            <input type="radio" name="team" id="instinct" autocomplete="off">Instinct
+                        </label>
+                        <label class="btn btn-danger" id="valor" onclick="changeTeam()">
+                            <input type="radio" name="team" autocomplete="off">Valor
+                        </label>
+                        <label class="btn btn-primary" id="mystic" onclick="changeTeam()">
+                            <input type="radio" name="team" autocomplete="off">Mystic
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="generation" class="col-xs-12 col-sm-2 control-label">Generation</label>
+                    <div class="col-xs-12 col-sm-10">
+                        <label class="radio-inline">
+                            <input type="radio" name="gen" value="1" id="1" onclick="showPokemon(1)">1
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="gen" value="2" id="2" onclick="showPokemon(2)">2
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="gen" value="3" id="3" onclick="showPokemon(3)">3
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="gen" value="4" id="4" onclick="showPokemon(4)">4
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="gen" value="5" id="5" onclick="showPokemon(5)">5
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="gen" value="6" id="6" onclick="showPokemon(6)">6
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group" id="sprites">
+                    <label for="pokemon" class="col-xs-12 col-sm-2 control-label">Pokemon</label>
+                </div>
+                
+                <div class="form-group" role="form">
+                    <label for="mega" class="col-xs-12 col-sm-2 control-label">Mega Evolution</label>
+                    <div class="col-xs-12 col-sm-8 btn-group" data-toggle="buttons">
+                        <label class="btn btn-danger" id="false" onclick="makeMega()">
+                            <input type="radio" name="team" autocomplete="off">No
+                        </label>
+                        <label class="btn btn-success" id="true" onclick="makeMega()">
+                            <input type="radio" name="team" autocomplete="off">Yes
+                        </label>
+                    </div>
+                    <div class="col-xs-12 col-sm-offset-2 col-sm-10 help-block">This button will not check if the selected pokemon has a mega evolution for you.</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="text" class="col-xs-12 col-sm-2 control-label">Flair Text</label>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="text" class="form-control" id="text" placeholder="Flair Text" onchange="updateText(this.value)">
+                    </div>
+                    <div class="col-xs-12 col-sm-offset-2 col-sm-10 help-block">Click outside of the text box to update the preview below.</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="preview" class="col-sm-2 control-label">Flair Preview</label>
+                    <div class="col-sm-10" id="preview">
+                        <img id="flairTeam" src="">
+                        <img id="flairPoke" src="" style="position:relative;left:-37px;top:3px;">
+                        <div id="flairText" style="position:relative;display:inline;font-family:sans-serif;font-size:11px;left:-35px"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default" onclick="openCompose()">Submit</button>
+                    </div>
+                    <div class="col-xs-12 col-sm-offset-2 col-sm-10 help-block">Special characters in Flair Text might be lost after clicking Submit.</div>
+                </div>
+            </form>
+            
+            <div class="col-xs-12 help-block">
+                Created by <a href="https://www.reddit.com/u/hizinfiz" class="help-link">/u/hizinfiz</a> | <a href="https://github.com/hizinfiz/FlairPicker/tree/gh-pages" class="help-link">Source</a>
+            </div>
+        </div>
+    </div>
+</body>
+    
+<script src="flair.js"></script>
+</html>
