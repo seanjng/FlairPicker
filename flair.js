@@ -50,7 +50,6 @@ function showPokemon(num) {
 function openCompose() {
     subject = team + "-" + poke.toString() + mega;
     text = encodeURIComponent(text)
-    text = encodeURI(text);
     window.open("https://www.reddit.com/message/compose/?to=PokemonGoFlairs&subject="+subject+"&message="+text)
 }
 
