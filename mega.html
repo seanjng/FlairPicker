@@ -20,18 +20,16 @@
       ga('send', 'pageview');
     </script>
 </head>
-
-<style>
-    #megaLink:hover {
-        text-decoration:none !important;
-    }    
-</style>  
-
+    
 <body style="background:#fafafa;">
     <div class="container">
         <div class="row row-content">
             <div class="col-xs-12 page-header">
-                <h2>/r/PokemonGo Flair Picker</h2>
+                <h2>/r/PokemonGo Mega & Special Forms Flair Picker <small>shhhhh</small></h2>
+            </div>
+            
+            <div class="col-xs-12" style="padding-bottom:10px;">
+                <a href="index.html">Take me back!</a>
             </div>
             
             <div class="col-xs-12">
@@ -110,6 +108,19 @@
                     <label for="pokemon" class="col-xs-12 col-sm-2 control-label">Pokemon</label>
                 </div>
                 
+                <div class="form-group" role="form" id="megaPart">
+                    <label for="mega" class="col-xs-12 col-sm-2 control-label">Special Form</label>
+                    <div class="col-xs-12 col-sm-8 btn-group" data-toggle="buttons">
+                        <label class="btn btn-danger active" id="false" onclick="makeMega(event)">
+                            <input type="radio" name="team" autocomplete="off" checked>No
+                        </label>
+                        <label class="btn btn-success" id="true" onclick="makeMega(event)">
+                            <input type="radio" name="team" autocomplete="off">Yes
+                        </label>
+                    </div>
+                    <div class="col-xs-12 col-sm-offset-2 col-sm-10 help-block">"Yes" may need to be clicked twice in some situations.</div>
+                </div>
+                
                 <div class="form-group">
                     <label for="text" class="col-xs-12 col-sm-2 control-label">Flair Text</label>
                     <div class="col-xs-12 col-sm-6">
@@ -131,7 +142,7 @@
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" class="btn btn-primary" onclick="openCompose()">Get my flair!</button>
                     </div>
-                    <div class="col-xs-12 col-sm-offset-2 col-sm-10 help-block"><a href="mega.html" id="megaLink" style="color:#737373;">Special characters</a> in Flair Text might be lost after clicking "Get my flair!".</div>
+                    <div class="col-xs-12 col-sm-offset-2 col-sm-10 help-block">Special characters in Flair Text might be lost after clicking "Get my flair!".</div>
                 </div>
             </form>
             
@@ -139,7 +150,24 @@
                 Created by <a href="https://www.reddit.com/u/hizinfiz" class="help-link">/u/hizinfiz</a> | <a href="https://github.com/hizinfiz/FlairPicker/tree/gh-pages" class="help-link">Source</a>
             </div>
         </div>
+    </div>    
+
+    <div class="modal fade" id="specialForm" tabindex="-1" role="dialog" aria-labelledby="specialFormLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="specialFormLabel">Special Form Picker</h4>
+                    </div>
+                    <div class="modal-body" id="specialBody"></div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close Without Saving</button>
+                    <button type="button" class="btn btn-primary" onclick="specialUpdate(event)" data-dismiss="modal">Save Changes</button>
+                </div>
+            </div>
+        </div>
     </div>
+
 </body>
     
 <script src="flair.js"></script>
