@@ -10,7 +10,7 @@ function changeTeam() {
     if(event.target.id === "plain") {
         teamFlair.src = "";
     } else {
-        teamFlair.src = "Images/"+event.target.id+".png";
+        teamFlair.src = "../Images/"+event.target.id+".png";
     }
 
     team = event.target.id + "flair";
@@ -19,7 +19,7 @@ function changeTeam() {
 
 function changePoke() {
     var pokeFlair = document.getElementById("flairPoke");
-    pokeFlair.src = "Images/Pokemon-min/"+event.target.id+"-min.png";
+    pokeFlair.src = "../Images/Pokemon-min/"+event.target.id+"-min.png";
     poke=parseInt(event.target.id);
 }
 
