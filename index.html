@@ -23,16 +23,16 @@
                 <div class="form-group" role="form">
                     <label for="team" class="col-xs-12 col-sm-2 control-label">Team</label>
                     <div class="col-xs-12 col-sm-8 btn-group" data-toggle="buttons">
-                        <label class="btn btn-default" id="plain" onclick="changeTeam()">
+                        <label class="btn btn-default" id="plain" onclick="changeTeam(event)">
                             <input type="radio" name="team" autocomplete="off">No Team
                         </label>
-                        <label class="btn btn-warning" id="instinct" onclick="changeTeam()">
+                        <label class="btn btn-warning" id="instinct" onclick="changeTeam(event)">
                             <input type="radio" name="team" id="instinct" autocomplete="off">Instinct
                         </label>
-                        <label class="btn btn-danger" id="valor" onclick="changeTeam()">
+                        <label class="btn btn-danger" id="valor" onclick="changeTeam(event)">
                             <input type="radio" name="team" autocomplete="off">Valor
                         </label>
-                        <label class="btn btn-primary" id="mystic" onclick="changeTeam()">
+                        <label class="btn btn-primary" id="mystic" onclick="changeTeam(event)">
                             <input type="radio" name="team" autocomplete="off">Mystic
                         </label>
                     </div>
@@ -72,10 +72,10 @@
                 <div class="form-group" role="form">
                     <label for="mega" class="col-xs-12 col-sm-2 control-label">Mega Evolution</label>
                     <div class="col-xs-12 col-sm-8 btn-group" data-toggle="buttons">
-                        <label class="btn btn-danger" id="false" onclick="makeMega()">
+                        <label class="btn btn-danger" id="false" onclick="makeMega(event)">
                             <input type="radio" name="team" autocomplete="off">No
                         </label>
-                        <label class="btn btn-success" id="true" onclick="makeMega()">
+                        <label class="btn btn-success" id="true" onclick="makeMega(event)">
                             <input type="radio" name="team" autocomplete="off">Yes
                         </label>
                     </div>

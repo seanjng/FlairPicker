@@ -5,25 +5,20 @@ var text = "Flair Text";
 var subject = team + "-" + poke.toString();
 var mega = "";
 
-function changeTeam() {
+function changeTeam(event) {
     var teamFlair = document.getElementById("flairTeam");
-    if(event.target.id === "plain") {
-        teamFlair.src= "Images/plain.png";
-    } else {
-        teamFlair.src = "Images/"+event.target.id+".png";
-    }
+    teamFlair.src = "Images/"+event.target.id+".png";
 
     team = event.target.id + "flair";
-
 }
 
-function changePoke() {
+function changePoke(event) {
     var pokeFlair = document.getElementById("flairPoke");
     pokeFlair.src = "Images/Pokemon-min/"+event.target.id+"-min.png";
     poke=parseInt(event.target.id);
 }
 
-function makeMega() {
+function makeMega(event) {
     if (event.target.id === "true") {
         mega = "m";
     } else if (event.target.id === "false") {
@@ -95,7 +90,7 @@ $(document).ready(function() {
             }
 //          pokemon.innerHTML="<input type='radio' name='poke' value='"+j+"'><img src='http://www.serebii.net/pokedex-xy/icon/"+num+".png'>";
 //          pokemon.innerHTML="<input type='radio' name='poke' value='"+j+"'><img src='Images/Pokemon/"+num+".png'>";
-            pokemon.innerHTML="<input type='radio' name='poke' id='"+num+"' value='"+j+"' onclick='changePoke()'><img src='Images/Pokemon-min/"+num+"-min.png'>";
+            pokemon.innerHTML="<input type='radio' name='poke' id='"+num+"' value='"+j+"' onclick='changePoke(event)'><img src='Images/Pokemon-min/"+num+"-min.png'>";
             box.appendChild(pokemon.cloneNode(true));
         }
         sprite.appendChild(box.cloneNode(true));
