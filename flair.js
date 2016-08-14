@@ -38,7 +38,7 @@ function openCompose() {
     if (poke === 0) {
         subject = team.slice(0, -5);
     } else {
-        subject = team + "-" + poke.toString() + mega;
+        subject = team + "-" + poke.toString();
     }
     text = encodeURIComponent(text)
     window.open("https://www.reddit.com/message/compose/?to=PokemonGoFlairs&subject="+subject+"&message="+text)
