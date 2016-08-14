@@ -23,8 +23,8 @@
                 <div class="form-group" role="form">
                     <label for="team" class="col-xs-12 col-sm-2 control-label">Team</label>
                     <div class="col-xs-12 col-sm-8 btn-group" data-toggle="buttons">
-                        <label class="btn btn-default" id="plain" onclick="changeTeam(event)">
-                            <input type="radio" name="team" autocomplete="off">No Team
+                        <label class="btn btn-default active" id="plain" onclick="changeTeam(event)">
+                            <input type="radio" name="team" autocomplete="off" checked>No Team
                         </label>
                         <label class="btn btn-warning" id="instinct" onclick="changeTeam(event)">
                             <input type="radio" name="team" id="instinct" autocomplete="off">Instinct
@@ -69,19 +69,6 @@
                     <label for="pokemon" class="col-xs-12 col-sm-2 control-label">Pokemon</label>
                 </div>
                 
-                <div class="form-group" role="form">
-                    <label for="mega" class="col-xs-12 col-sm-2 control-label">Mega Evolution</label>
-                    <div class="col-xs-12 col-sm-8 btn-group" data-toggle="buttons">
-                        <label class="btn btn-danger" id="false" onclick="makeMega(event)">
-                            <input type="radio" name="team" autocomplete="off">No
-                        </label>
-                        <label class="btn btn-success" id="true" onclick="makeMega(event)">
-                            <input type="radio" name="team" autocomplete="off">Yes
-                        </label>
-                    </div>
-                    <div class="col-xs-12 col-sm-offset-2 col-sm-10 help-block">This button will not check if the selected pokemon has a mega evolution for you.</div>
-                </div>
-                
                 <div class="form-group">
                     <label for="text" class="col-xs-12 col-sm-2 control-label">Flair Text</label>
                     <div class="col-xs-12 col-sm-6">
@@ -111,7 +98,7 @@
                 Created by <a href="https://www.reddit.com/u/hizinfiz" class="help-link">/u/hizinfiz</a> | <a href="https://github.com/hizinfiz/FlairPicker/tree/gh-pages" class="help-link">Source</a>
             </div>
         </div>
-    </div>
+    </div>    
 </body>
     
 <script src="flair.js"></script>

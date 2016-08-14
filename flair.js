@@ -3,12 +3,12 @@ var team = "plainflair";
 var poke = 0;
 var text = "Flair Text";
 var subject = team + "-" + poke.toString();
-var mega = "";
 
 function changeTeam(event) {
     var teamFlair = document.getElementById("flairTeam");
     teamFlair.src = "Images/"+event.target.id+".png";
 
+    
     team = event.target.id + "flair";
 }
 
@@ -16,14 +16,6 @@ function changePoke(event) {
     var pokeFlair = document.getElementById("flairPoke");
     pokeFlair.src = "Images/Pokemon-min/"+event.target.id+"-min.png";
     poke=parseInt(event.target.id);
-}
-
-function makeMega(event) {
-    if (event.target.id === "true") {
-        mega = "m";
-    } else if (event.target.id === "false") {
-        mega = "";
-    }
 }
 
 function updateText(words) {
@@ -43,7 +35,11 @@ function showPokemon(num) {
 }
 
 function openCompose() {
-    subject = team + "-" + poke.toString() + mega;
+    if (poke === 0) {
+        subject = team.slice(0, -5);
+    } else {
+        subject = team + "-" + poke.toString() + mega;
+    }
     text = encodeURIComponent(text)
     window.open("https://www.reddit.com/message/compose/?to=PokemonGoFlairs&subject="+subject+"&message="+text)
 }
