@@ -8,9 +8,9 @@ var mega = "";
 function changeTeam() {
     var teamFlair = document.getElementById("flairTeam");
     if(event.target.id === "plain") {
-        teamFlair.src = "";
+        teamFlair.src= "Images/plain.png";
     } else {
-        teamFlair.src = "../Images/"+event.target.id+".png";
+        teamFlair.src = "Images/"+event.target.id+".png";
     }
 
     team = event.target.id + "flair";
@@ -19,7 +19,7 @@ function changeTeam() {
 
 function changePoke() {
     var pokeFlair = document.getElementById("flairPoke");
-    pokeFlair.src = "../Images/Pokemon-min/"+event.target.id+"-min.png";
+    pokeFlair.src = "Images/Pokemon-min/"+event.target.id+"-min.png";
     poke=parseInt(event.target.id);
 }
 
