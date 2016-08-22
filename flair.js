@@ -8,8 +8,6 @@ var mega = "";
 function changeTeam(event) {
     var teamFlair = document.getElementById("flairTeam");
     teamFlair.src = "Images/"+event.target.id+".png";
-
-    
     team = event.target.id + "flair";
 }
 
@@ -21,7 +19,6 @@ function changePoke(event) {
 
 function makeMega(event) {
     var num = [3, 6, 9, 15, 18, 25, 65, 80, 94, 115, 127, 130, 142, 150, 181, 208, 212, 214, 229, 248, 254, 257, 260, 282, 302, 303, 306, 308, 310, 319, 323, 334, 351, 354, 359, 362, 373, 376, 380, 381, 382, 383, 384, 386, 422, 423, 428, 445, 448, 460, 475, 479, 483, 487, 492, 531, 592, 593, 641, 642, 645, 646, 647, 648, 666, 668, 678, 681, 719]
-    var altPoke = [6, 25, 130, 150, 351, 386, 392, 422, 423, 479, 483, 487, 492, 592, 593, 641, 642, 645, 646, 647, 648, 666, 668, 678, 681]
     var megaPoke = [3, 9, 15, 18, 65, 80, 94, 115, 127, 142, 181, 208, 212, 214, 229, 248, 254, 257, 260, 282, 302, 303, 306, 308, 310, 319, 323, 334, 354, 359, 362, 373, 376, 380, 381, 382, 383, 384, 428, 445, 448, 460, 475, 531, 719]
     
     var number = poke.toString();
@@ -196,7 +193,6 @@ function makeMega(event) {
 function updateText(words) {
     var word = document.getElementById("flairText");
     word.innerHTML = words;
-    
     text = words;
 }
 
@@ -231,7 +227,6 @@ $(document).ready(function() {
     var box = document.createElement("div");
     box.className = "col-xs-12 col-sm-10";
     box.style.display="none";
-    
     for (var i=1; i<7; i++) {
         var gen = "gen"+i.toString();
         box.setAttribute("id", gen);
@@ -266,9 +261,7 @@ $(document).ready(function() {
             for(var k = num.length; k < 3; k++) {
                 num = "0" + num;
             }
-//          pokemon.innerHTML="<input type='radio' name='poke' value='"+j+"'><img src='http://www.serebii.net/pokedex-xy/icon/"+num+".png'>";
-//          pokemon.innerHTML="<input type='radio' name='poke' value='"+j+"'><img src='Images/Pokemon/"+num+".png'>";
-            pokemon.innerHTML="<input type='radio' name='poke' id='"+num+"' value='"+j+"' onclick='changePoke(event)'><img src='Images/Pokemon-min/"+num+"-min.png'>";
+            pokemon.innerHTML="<input type='radio' name='poke' id='"+num+"' value='"+j+"' onclick='changePoke(event)'><i class='sprite min-"+num+"'></i>";
             box.appendChild(pokemon.cloneNode(true));
         }
         sprite.appendChild(box.cloneNode(true));
@@ -276,5 +269,4 @@ $(document).ready(function() {
             box.removeChild(box.firstChild);
         }
     }
-    
 });
